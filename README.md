@@ -31,16 +31,16 @@ Some functionalities:
 ---
 ## Index:
 - #### Objectives
-    - Main Goal & User Story
-        - A) detecting new messages
-        - B) reading new message(s)
-        - C) replying a message
-        - D) send a message
+	- Main Goal & User Story
+		- A) detecting new messages
+		- B) reading new message(s)
+		- C) replying a message
+		- D) send a message
 - #### Installation & Usage
 - #### Code Examples
-    - Login into whatsapp web, check you are logged in & logout
-    - Get all opened chats, go into the chat, read the last 10 messages from your friend and reply to the most recent message
-    - More examples
+	- Login into whatsapp web, check you are logged in & logout
+	- Get all opened chats, go into the chat, read the last 10 messages from your friend and reply to the most recent message
+	- More examples
 - #### Information
 - #### Maintainer
 
@@ -98,8 +98,8 @@ driver = webdriver.Firefox()
 driver.maximize_window()
 
 # 1. Login
-#       and uncheck the remember check box
-#       (Get your phone ready to read the QR code)
+#	   and uncheck the remember check box
+#	   (Get your phone ready to read the QR code)
 login_page = LoginPage(driver)
 login_page.load()
 login_page.remember_me = False
@@ -107,9 +107,9 @@ time.sleep(7)
 
 
 # 2. The base page is inherited by all pages
-#       and here you can check whether any
-#       page is available on the screen of
-#       the browser.
+#	   and here you can check whether any
+#	   page is available on the screen of
+#	   the browser.
 
 # we don't need to load the pages as whatsapp
 # web works as one-page web app
@@ -148,18 +148,18 @@ driver = webdriver.Firefox()
 driver.maximize_window()
 
 # Login
-#       and uncheck the remember check box
-#       (Get your phone ready to read the QR code)
+#	   and uncheck the remember check box
+#	   (Get your phone ready to read the QR code)
 login_page = LoginPage(driver)
 login_page.load()
 time.sleep(7)
 
 
 # 1. Get all opened chats
-#       opened chats are the one chats or conversations
-#       you already have in your whatsapp.
-#       IT WONT work if you are looking for a contact
-#       you have never started a conversation.
+#	   opened chats are the one chats or conversations
+#	   you already have in your whatsapp.
+#	   IT WONT work if you are looking for a contact
+#	   you have never started a conversation.
 pane_page = PanePage(driver)
 
 # get all chats
@@ -167,17 +167,17 @@ opened_chats = pane_page.opened_chats
 
 # iterating over them
 for oc in opened_chats:
-    print(oc.name)  # contact name (as appears on your whatsapp)
-    print(oc.icon)  # the url of the image
-    print(oc.last_message)
-    print(oc.last_message_time)  # datetime object
-    print(oc.has_notifications())  # are there unread messages?
-    print(oc.notifications)  # returns a integer with the qty of new messages, if there are.
+	print(oc.name)  # contact name (as appears on your whatsapp)
+	print(oc.icon)  # the url of the image
+	print(oc.last_message)
+	print(oc.last_message_time)  # datetime object
+	print(oc.has_notifications())  # are there unread messages?
+	print(oc.notifications)  # returns a integer with the qty of new messages, if there are.
 
 
 # 2. Go into the chat
-#       just click on one to open the chat page
-#       (where the conversation is happening)
+#	   just click on one to open the chat page
+#	   (where the conversation is happening)
 first_chat = opened_chats[0]
 first_chat.click()
 
@@ -186,10 +186,10 @@ chat_page = ChatPage(driver)
 msgs = chat_page.messages.newest(10, filterby='contact')
 
 for msg in msgs:
-    print(msg.contact) # name (all should be the same)
-    print(msg.date)
-    print(msg.text)
-    print(msg.status)
+	print(msg.contact) # name (all should be the same)
+	print(msg.date)
+	print(msg.text)
+	print(msg.status)
 
 
 # 4. Reply to the most recent message
@@ -229,8 +229,8 @@ in the repo_
   - search (chats, groups, contacts[new chat], messages)
   - opened_chats (chat, contact icon, contact name, arrow status, truncated msg, time, new msg notification(opt))
 
-    NOTE: chats are visible only when scrolling and are visible on the screen of the browser.
-    
+	NOTE: chats are visible only when scrolling and are visible on the screen of the browser.
+	
 - right side (top-bottom)
   - contact_detail (contact icon, contact name, ... , search, attachment, menu)
   - contact_chat (messages)
@@ -251,9 +251,9 @@ in the repo_
 ## Information:
 | Technology Stack |  |  |
 | :- | :-: | :- |
-| Python                    | ![language][python]                   | Language |
-| Selenium                  | ![selenium][selenium]                 | Browser Automation |
-| Whatsapp Web              | ![whatsapp][whatsapp]                 | Chat Service |
+| Python					| ![language][python]				   | Language |
+| Selenium				  | ![selenium][selenium]				 | Browser Automation |
+| Whatsapp Web			  | ![whatsapp][whatsapp]				 | Chat Service |
 
 <br><br>
 

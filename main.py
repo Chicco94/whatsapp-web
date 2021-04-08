@@ -12,18 +12,18 @@ from simon.header.pages import HeaderPage
 driver = webdriver.Chrome(executable_path="C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe")
 
 # Login
-#       and uncheck the remember check box
-#       (Get your phone ready to read the QR code)
+#	   and uncheck the remember check box
+#	   (Get your phone ready to read the QR code)
 login_page = LoginPage(driver)
 login_page.load()
 time.sleep(7)
 
 
 # 1. Get all opened chats
-#       opened chats are the one chats or conversations
-#       you already have in your whatsapp.
-#       IT WONT work if you are looking for a contact
-#       you have never started a conversation.
+#	   opened chats are the one chats or conversations
+#	   you already have in your whatsapp.
+#	   IT WONT work if you are looking for a contact
+#	   you have never started a conversation.
 pane_page = PanePage(driver)
 
 # get all chats
@@ -32,16 +32,16 @@ opened_chats = pane_page.opened_chats
 # iterating over them
 print("chat:")
 for oc in opened_chats:
-    print("name:", oc.name)  # contact name (as appears on your whatsapp)
-    print("last_message:", oc.last_message)
-    print("has_notifications:", oc.has_notifications())  # are there unread messages?
-    print("notifications:", oc.notifications)  # returns a integer with the qty of new messages, if there are.
-    print("\n")
+	print("name:", oc.name)  # contact name (as appears on your whatsapp)
+	print("last_message:", oc.last_message)
+	print("has_notifications:", oc.has_notifications())  # are there unread messages?
+	print("notifications:", oc.notifications)  # returns a integer with the qty of new messages, if there are.
+	print("\n")
 
 
 # 2. Go into the chat
-#       just click on one to open the chat page
-#       (where the conversation is happening)
+#	   just click on one to open the chat page
+#	   (where the conversation is happening)
 first_chat = opened_chats[0]
 first_chat.click()
 
@@ -51,10 +51,10 @@ msgs = chat_page.messages.newest(10, filterby='contact')
 
 print("messaggi di una chat:")
 for msg in msgs:
-    print(msg.contact) # name (all should be the same)
-    print(msg.date)
-    print(msg.text)
-    print(msg.status)
+	print(msg.contact) # name (all should be the same)
+	print(msg.date)
+	print(msg.text)
+	print(msg.status)
 
 
 # 4. Reply to the most recent message

@@ -16,10 +16,10 @@ class ChatLocators(object):
     # READING MSGS
     CHAT_BODY = (By.CSS_SELECTOR, "#main ._2-aNW .z_tTQ")
     # all
-    CHAT_BODY_MSGS = (By.CSS_SELECTOR, "._2hqOq.message-in, ._2hqOq.message-out")
+    CHAT_BODY_MSGS = (By.CSS_SELECTOR, ".GDTQm.message-in, .GDTQm.message-out")
     # filtered by "contact"
-    CHAT_BODY_MSGS_MYSELF = (By.CSS_SELECTOR, "._2hqOq.message-out")
-    CHAT_BODY_MSGS_CONTACT = (By.CSS_SELECTOR, "._2hqOq.message-in")
+    CHAT_BODY_MSGS_MYSELF = (By.CSS_SELECTOR, ".GDTQm.message-out")
+    CHAT_BODY_MSGS_CONTACT = (By.CSS_SELECTOR, ".GDTQm.message-in")
     # filtered by "type"
     CHAT_BODY_MSGS_TYPE_VOICE_RECORDING = (By.CSS_SELECTOR, "._3D5PJ")
     CHAT_BODY_MSGS_TYPE_VIDEO = (By.CSS_SELECTOR, ".S9d8c")
@@ -46,12 +46,13 @@ class ChatLocators(object):
     CHAT_BODY_MSG_ARROW_POP_MENU_MY_OWN_MSG_STAR = (By.CSS_SELECTOR, "._2s_eZ ._1N-3y.eP_pD._36Osw:nth-child(4) div")
     CHAT_BODY_MSG_ARROW_POP_MENU_MY_OWN_MSG_DELETE = (By.CSS_SELECTOR, "._2s_eZ ._1N-3y.eP_pD._36Osw:nth-child(5) div")
     # <- END
-    CHAT_BODY_UNREAD_MESSAGE = (By.CSS_SELECTOR, "._9WQEN")
+    CHAT_BODY_UNREAD_MESSAGE = (By.CSS_SELECTOR, "._2nWgr")
     CHAT_BODY_ARROW_BUTTON = (By.CSS_SELECTOR, "._1YcH-._1-MYr")
     CHAT_BODY_ARROW_BUTTON_NOTIFICATION_QTY = (By.CSS_SELECTOR, "._31gEB")
 
     # SENDING MSGS
     CHAT_FOOTER = (By.CSS_SELECTOR, "#main footer")
-    CHAT_FOOTER_SMILEY_ICON = (By.CSS_SELECTOR, "#main footer ._2X5R7")
-    CHAT_FOOTER_TEXT_INPUT_FIELD = (By.CSS_SELECTOR, "#main footer ._3FRCZ")
-    CHAT_FOOTER_RECORD_ICON = (By.CSS_SELECTOR, "#main footer ._2r1fJ")
+    CHAT_FOOTER_SMILEY_ICON = (By.CSS_SELECTOR, "#main footer ._291Eb ._2MeuX")
+    CHAT_FOOTER_ATTACH_ICON = (By.CSS_SELECTOR, "#main footer ._291Eb ._2MeuX")
+    CHAT_FOOTER_TEXT_INPUT_FIELD = (By.CSS_SELECTOR, "#main footer ._2C9f1")
+    CHAT_FOOTER_RECORD_ICON = (By.CSS_SELECTOR, "#main footer .EBaI7")

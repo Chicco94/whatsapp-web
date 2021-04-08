@@ -27,34 +27,35 @@ time.sleep(7)
 pane_page = PanePage(driver)
 
 # get all chats
-opened_chats = pane_page.opened_chats
+# opened_chats = pane_page.opened_chats
 
 # iterating over them
-print("chat:")
-for oc in opened_chats:
-	print("name:", oc.name)  # contact name (as appears on your whatsapp)
-	print("last_message:", oc.last_message)
-	print("has_notifications:", oc.has_notifications())  # are there unread messages?
-	print("notifications:", oc.notifications)  # returns a integer with the qty of new messages, if there are.
-	print("\n")
+#print("chat:")
+#for oc in opened_chats:
+#	print("name:", oc.name)  # contact name (as appears on your whatsapp)
+#	print("last_message:", oc.last_message)
+#	print("has_notifications:", oc.has_notifications())  # are there unread messages?
+#	print("notifications:", oc.notifications)  # returns a integer with the qty of new messages, if there are.
+#	print("\n")
 
 
 # 2. Go into the chat
 #	   just click on one to open the chat page
 #	   (where the conversation is happening)
-first_chat = opened_chats[0]
+# first_unreaded_chat = pane_page.get_first_opened_chat_with_notifications()
+first_chat = pane_page.get_opened_chat("Gianluca Pegoraro")
 first_chat.click()
 
 # 3. Read the last 10 messages from your contact
 chat_page = ChatPage(driver)
 msgs = chat_page.messages.newest(10, filterby='contact')
 
-print("messaggi di una chat:")
+print("ci sono {} messaggi in questa chat:".format(len(msgs)))
 for msg in msgs:
-	print(msg.contact) # name (all should be the same)
-	print(msg.date)
-	print(msg.text)
-	print(msg.status)
+	print("contact:",msg.contact) # name (all should be the same)
+	print("date:",msg.date)
+	print("text:",msg.text)
+	print("status:",msg.status)
 
 
 # 4. Reply to the most recent message

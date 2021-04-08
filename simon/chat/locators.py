@@ -30,7 +30,7 @@ class ChatLocators(object):
 	# message details
 	CHAT_BODY_MSG_CONTACT_AND_DATETIME = (By.CSS_SELECTOR, "._3sKvP.wQZ0F ._274yw div.copyable-text")
 	CHAT_BODY_MSG_STATUS = (By.CSS_SELECTOR, "._3sKvP.wQZ0F ._274yw div._2frDn ._1qPwk span")
-	CHAT_BODY_MSG_TEXT = (By.CSS_SELECTOR, "._3sKvP.wQZ0F ._274yw div.copyable-text ._3Whw5 span")
+	CHAT_BODY_MSG_TEXT = (By.CSS_SELECTOR, "._3XpKm._20zqk ._1bR5a div.copyable-text ._3ExzF span")
 	CHAT_BODY_MSG_ARROW_MY_OWN_MSG = (By.CSS_SELECTOR, "._4tndQ._1q11a ._2oA--")
 	CHAT_BODY_MSG_ARROW = (By.CSS_SELECTOR, "._2nBjH._1q11a ._2oA--")
 

@@ -59,11 +59,13 @@ for msg in msgs:
 
 
 # 4. Reply to the most recent message
-#msg = msgs[0]  # get the first of the messages query done in previous step
-#msg = chat_page.messages.newest(filterby='contact')
+# get the first of the messages query done in previous step
+# msg = chat_page.messages.newest(filterby='contact')
 # Be careful as library can only now reply to text message
 # Replying to a msg type (video, image, giff, etc) is not implemented yet. 
-#msg.reply("This a reply to a specific text msg.")
+# msg.reply("This a reply to a specific text msg.")
+
+chat_page.writer.send_msg("polpetta")
 
 
 # Logout
